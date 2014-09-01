@@ -29,6 +29,6 @@ The provided names are:
 But this has been written before!
 -----
 
-Indeed, but unfortunately I could not find one version that would run under
+Indeed, but unfortunately I could not find an implementation that would run under
 node.js without throwing. Since I want to share view code between browser and
 server, I had to come up with my own solution.
