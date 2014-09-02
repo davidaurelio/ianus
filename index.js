@@ -1,6 +1,6 @@
 var prefixes = [
   ['WebkitTransition', '-webkit-transition', 'webkitTransitionEnd'],
-  ['MozTransition', '-moz-transition', 'transitionEnd'],
+  ['MozTransition', '-moz-transition', 'transitionend'],
   ['OTransition', '-o-transition', 'oTransitionEnd'],
   ['transition', 'transition', 'transitionend']
 ];
