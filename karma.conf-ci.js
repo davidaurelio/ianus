@@ -1,8 +1,9 @@
 var setValues = module.exports = require('./karma.conf');
 var configValues = require('./karma.conf').configValues;
+var env = process.env;
 
 // Use ENV vars for credentials
-if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
+if (!env.SAUCE_USERNAME || !env.SAUCE_ACCESS_KEY) {
   throw Error('Provide sauce access credentials as SAUCE_USERNAME and SAUCE_ACCESS_KEY env variables.');
 }
 
@@ -25,13 +26,19 @@ var customLaunchers = {
   'SL_Chrome_latest': createLauncher('chrome'),
   'SL_Safari_5': createLauncher('safari', '5'),
   'SL_Safari_latest': createLauncher('safari'),
-  'SL_Opera_12': createLauncher('opera', '12'),
+  'SL_Opera_12': createLauncher('opera', '12')
 };
+
+var launcherNames = Object.keys(customLaunchers);
+if (env.SAUCE_RANGE) {
+  var range = env.SAUCE_RANGE.split(',').map(Number);
+  launcherNames = launcherNames.slice(range[0], range[0] + range[1]);
+}
 
 configValues.reporters = ['dots', 'saucelabs'];
 configValues.sauceLabs = {testName: 'ianus runtime environment tests'};
 configValues.customLaunchers = customLaunchers;
-configValues.browsers = Object.keys(customLaunchers);
+configValues.browsers = launcherNames;
 configValues.singleRun = true;
 configValues.captureTimeout = 300000;
 
@@ -44,4 +51,8 @@ function createLauncher(name, version, platform) {
     launcher.version = version;
   }
   return launcher;
+}
+
+if (require.main === module) {
+  process.stdout.write(launcherNames.length + '\n');
 }
