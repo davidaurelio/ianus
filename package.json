@@ -1,6 +1,6 @@
 {
   "name": "ianus",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Provides browser-specific property and event names for CSS3 transition and animation. Won’t fail in environments that don’t have a DOM (like node.js).",
   "main": "index.js",
   "dependencies": {},
