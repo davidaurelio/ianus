@@ -12,17 +12,17 @@
     "karma-mocha": "~0.1.9",
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-referee": "~0.4.0",
-    "karma-sauce-launcher": "~0.2.10",
     "mocha": "~1.21.4",
     "referee": "~1.0.3",
     "referee-sinon": "~1.0.2",
-    "sinon": "~1.10.3"
+    "sinon": "~1.10.3",
+    "karma-browserstack-launcher": "~0.1.1"
   },
   "scripts": {
     "karma": "karma start ${KARMA_ARGS}",
     "test": "KARMA_ARGS='--no-auto-watch --single-run' npm run-script karma",
     "test-watch": "npm run-script karma",
-    "test-sauce": "KARMA_ARGS='karma.conf-ci.js' npm run-script karma",
+    "test-ci": "BROWSER_STACK_BUILD=`git describe --always` KARMA_ARGS='karma.conf-ci.js' npm run-script karma",
     "test-node": "mocha --reporter dot test.js"
   },
   "repository": {
