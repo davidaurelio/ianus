@@ -23,8 +23,11 @@ The provided names are:
 - `css.transitionDelay`
 - `css.transition`
 
-[![browser support](https://ci.testling.com/davidaurelio/ianus.png)](https://ci.testling.com/davidaurelio/ianus)
+[![Build Status](https://travis-ci.org/davidaurelio/ianus.svg?branch=master)](https://travis-ci.org/davidaurelio/ianus)
 
+Cross-browser testing is kindly provided by **[BrowserStack][].**
+
+[BrowserStack]: http://www.browserstack.com
 
 But this has been written before!
 -----
