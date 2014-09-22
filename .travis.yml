@@ -1,3 +1,5 @@
+language: node_js
+
 env:
   global:
     secure: Ew+bzuJ5LZ2rre6TsZmpGEFrim+CRFY4uZhFaTCubo9SDZ+fYOYIBGsuEwu5dM702c//8w1cTzA42gaVNwV71fICF64QgbIfY8JjP7UTQ8krWjNWeip6jcT7DlwPw5KzT8RWyd3dPKyuA2P2wHpHmkzl/4uRTnQVyP9fkHgevwk=
