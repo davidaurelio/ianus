@@ -96,7 +96,7 @@ function testPlatformWithTransforms() {
       assert(listener.wasCalled, 'listener was called');
       assert.equal(listener.context, element);
       done();
-    }, 200);
+    }, 400);
   });
 }
 
